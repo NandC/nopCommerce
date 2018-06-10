@@ -134,3 +134,24 @@ BEGIN
 END
 
 GO
+
+-- add author column
+IF NOT EXISTS(SELECT * FROM SYSCOLUMNS 
+			  WHERE ID = OBJECT_ID(N'[DBO].[PRODUCT]') 
+                         AND NAME = 'AUTHOR')
+BEGIN
+   ALTER TABLE dbo.Product ADD Author nvarchar(60) NULL
+END
+GO
+
+-- print result
+IF EXISTS(SELECT * FROM SYSCOLUMNS 
+			  WHERE ID = OBJECT_ID(N'[DBO].[PRODUCT]') 
+                         AND NAME = 'AUTHOR')
+BEGIN
+	PRINT 'Successfully added author column'
+END
+ELSE
+BEGIN
+	RAISERROR ('Failure: author column could not be added', 16, 1 );
+END
