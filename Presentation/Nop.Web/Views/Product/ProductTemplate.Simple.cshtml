@@ -64,7 +64,12 @@
                             <h1 itemprop="name">
                                 @Model.Name
                             </h1>
+                            <div>
+                                <span>By </span>
+                                <b> @Model.Author </b>
+                            </div>
                         </div>
+
                         @if (!string.IsNullOrEmpty(Model.ShortDescription))
                         {
                             <div class="short-description">

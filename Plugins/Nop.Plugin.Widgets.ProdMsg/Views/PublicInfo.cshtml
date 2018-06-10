@@ -1,0 +1,10 @@
+﻿@model Nop.Plugin.Widgets.ProdMsg.Models.PublicInfoModel
+
+@{
+    Layout = "";
+    Html.AddCssFileParts("~/Plugins/Widgets.ProdMsg/Content/prodmsg/prod-msg.css");
+}
+
+<div class="prod-message">
+    @Model.Message
+</div>

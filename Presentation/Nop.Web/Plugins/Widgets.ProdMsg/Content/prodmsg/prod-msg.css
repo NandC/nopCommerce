@@ -1,0 +1,11 @@
+
+/* The Product Message styles */
+
+div.prod-message {
+    font-weight: bold;
+    border: 1px solid #92a8d1;
+    font-size: 100%;
+    color: blue;
+    align-content: center;
+    text-align: center;
+}

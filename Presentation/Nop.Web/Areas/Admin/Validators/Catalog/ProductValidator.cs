@@ -12,6 +12,7 @@ namespace Nop.Web.Areas.Admin.Validators.Catalog
         public ProductValidator(ILocalizationService localizationService, IDbContext dbContext)
         {
             RuleFor(x => x.Name).NotEmpty().WithMessage(localizationService.GetResource("Admin.Catalog.Products.Fields.Name.Required"));
+            RuleFor(x => x.Author).Length(0, 60);
 
             SetDatabaseValidationRules<Product>(dbContext);
         }
